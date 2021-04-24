@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import { Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap'
 
 const Post = ({post}) => {
-  const { title, author, path, date, body } = post.frontmatter;
+  const { title, author, path, date, image } = post.frontmatter;
+  const body = post.excerpt
+  const fluid = image.childImageSharp.fluid
+  console.log(fluid)
   return (
     <Card>
+      <Link to={path}>
+        <Img className='card-image-top' fluid={fluid} />
+      </Link>
       <CardBody>
         <CardTitle>
           <Link to={path}>
@@ -19,7 +26,6 @@ const Post = ({post}) => {
         <CardText>{body}</CardText>
         <Link to={path} className="btn btn-outline-primary float-right">Read more</Link>
       </CardBody>
-      
     </Card>
   )
 }
