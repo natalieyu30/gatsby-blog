@@ -5,17 +5,17 @@ import { Card, CardTitle, CardText, CardSubtitle, CardBody, Badge } from 'reacts
 import { slugify } from '../utils/utilFunctions'
 
 const Post = ({post}) => {
-  const { title, author, path, date, tags, image } = post.frontmatter;
+  const { title, author, slug, date, tags, image } = post.frontmatter;
   const body = post.excerpt
   const fluid = image.childImageSharp.fluid
   return (
     <Card>
-      <Link to={path}>
+      <Link to={slug}>
         <Img className='card-image-top' fluid={fluid} />
       </Link>
       <CardBody>
         <CardTitle>
-          <Link to={path}>
+          <Link to={slug}>
             {title}
           </Link>
         </CardTitle>
@@ -33,7 +33,7 @@ const Post = ({post}) => {
             </li>
           ))}
         </ul>
-        <Link to={path} className="btn btn-outline-primary float-right">Read more</Link>
+        <Link to={slug} className="btn btn-outline-primary float-right">Read more</Link>
       </CardBody>
     </Card>
   )

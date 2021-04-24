@@ -2,12 +2,13 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Link } from 'gatsby'
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout pageTitle='404: Not Found'>
     <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <p>Something went wrong...</p>
+    <Link className='btn btn-info' to={'/'}>Back Home</Link>
   </Layout>
 )
 

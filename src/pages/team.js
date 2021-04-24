@@ -6,9 +6,9 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const TeamPage = () => (
-  <Layout>
+  <Layout pageTitle='Our Team'>
     <Seo title="Team" />
-    <h1>Our Team</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quibusdam porro aliquam ipsum cumque harum pariatur quisquam ut eligendi accusantium.</p>
   </Layout>
 )
 

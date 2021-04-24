@@ -1,9 +1,6 @@
 import * as React from "react"
 import Post from '../components/Post'
-import Sidebar from '../components/Sidebar'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Row, Col } from 'reactstrap'
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -17,7 +14,7 @@ const IndexPage = () => {
             title
             author
             date(formatString: "Do MMMM hh:mm")
-            path
+            slug
             tags
             image {
               childImageSharp {
@@ -33,19 +30,11 @@ const IndexPage = () => {
     }
   `)
   return (
-    <Layout>
+    <Layout pageTitle='Welcome to NatDev Blog'>
       <Seo title="Home" />
-      <h1>Home page</h1>
-      <Row>
-        <Col md='8'>
-          {data.allMarkdownRemark.nodes.map(node=> (
-            <Post key={node.id} post={node} />
-          ))}
-        </Col>
-        <Col md='4'>
-          <Sidebar />
-        </Col>
-      </Row>
+      {data.allMarkdownRemark.nodes.map(node=> (
+        <Post key={node.id} post={node} />
+      ))}      
     </Layout>
   )
 }
