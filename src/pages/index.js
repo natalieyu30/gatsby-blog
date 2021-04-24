@@ -1,5 +1,6 @@
 import * as React from "react"
 import Post from '../components/Post'
+import Sidebar from '../components/Sidebar'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 
@@ -17,6 +18,7 @@ const IndexPage = () => {
             author
             date(formatString: "Do MMMM hh:mm")
             path
+            tags
             image {
               childImageSharp {
                 fluid{
@@ -41,7 +43,7 @@ const IndexPage = () => {
           ))}
         </Col>
         <Col md='4'>
-          <div style={{width:"100%", height:"100%", backgroundColor:"rgba(0,0,0,0.5"}}></div>
+          <Sidebar />
         </Col>
       </Row>
     </Layout>
