@@ -21,7 +21,8 @@ exports.createPages = async ({graphql, actions}) => {
   const templates = {
     singlePostTemplate : path.resolve(`src/templates/single-post.js`),
     tagsPage : path.resolve(`src/templates/tags-page.js`),
-    tagPosts : path.resolve(`src/templates/tag-post.js`)
+    tagPosts : path.resolve(`src/templates/tag-post.js`),
+    postList : path.resolve(`src/templates/post-list.js`)
 
   }
   const result = await graphql(`
@@ -38,7 +39,8 @@ exports.createPages = async ({graphql, actions}) => {
     }
   `)
 
-  result.data.allMarkdownRemark.nodes.forEach(post => {
+  const posts = result.data.allMarkdownRemark.nodes
+  posts.forEach(post => {
     createPage({
       path: `/${post.frontmatter.slug}`,
       component: templates.singlePostTemplate,
@@ -78,5 +80,25 @@ exports.createPages = async ({graphql, actions}) => {
         tag
       }
     })
+  })
+
+  const postsPerPage = 2
+  const numberOfPages = Math.ceil(posts.length/ postsPerPage)
+  Array.from({ length: numberOfPages}).forEach((number, index) => {
+    const isFirstPage = index ===0
+    const currentPage = index +1
+
+    if (!isFirstPage) {
+      return createPage({
+        path:`/page/${currentPage}`,
+        component: templates.postList,
+        context: {
+          limit: postsPerPage,
+          skip: index * postsPerPage,
+          currentPage, 
+          numberOfPages
+        }
+      })
+    }
   })
 }

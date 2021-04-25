@@ -1,32 +1,31 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Post from '../components/Post'
+import PaginationLinks from '../components/PaginationLinks'
 import { graphql } from 'gatsby'
 
-const tagPosts = ({ data, pageContext }) => {
-  const { tag } = pageContext
-  const { totalCount } = data.allMarkdownRemark
-  const pageHeader = `${totalCount} post${totalCount === 1 ? '':'s'} tagged with "${tag}"`
 
+const postList = ({data, pageContext}) => {
+  // console.log(data, pageContext)
+  const posts = data.allMarkdownRemark.nodes
+  const { currentPage, numberOfPages } = pageContext
   return (
-    <Layout pageTitle={pageHeader}>
-      {data.allMarkdownRemark.nodes.map(node => (
-        <Post key={node.id} post={node} >
-
-        </Post>
+    <Layout pageTitle={`Page: ${currentPage}`}>
+      {posts.map(post => (
+        <Post key={post.id} post={post} />
       ))}
+      <PaginationLinks currentPage={currentPage} numberOfPages={numberOfPages} />
     </Layout>
   )
 }
 
-
-export const tagQuery = graphql`
-  query($tag: String){
+export const postListQuery = graphql`
+  query postListQuery($skip: Int, $limit: Int) {
     allMarkdownRemark(
       sort: {fields: frontmatter___date, order: DESC}
-      filter: {frontmatter: {tags: {eq: $tag}}}
+      skip: $skip
+      limit: $limit
     ) {
-      totalCount
       nodes {
         id
         excerpt
@@ -48,4 +47,5 @@ export const tagQuery = graphql`
     }
   }
 `
-export default tagPosts
+
+export default postList
