@@ -24,7 +24,7 @@ const IndexPage = () => {
             tags
             image {
               childImageSharp {
-                fluid{
+                fluid(maxWidth: 550){
                   ...GatsbyImageSharpFluid
                 }
               }

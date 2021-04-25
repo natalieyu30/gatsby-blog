@@ -1,9 +1,9 @@
 ---
-title: "Fourth Post - React"
-slug: "fourth-post-react"
-date: 2020-04-12 12:00:00
-author: "Kristine Allen"
-image: "../../images/cupcakes.jpeg"
+title: "Sixth Post - MERN stack"
+slug: "sixth-post-mern-stack"
+date: 2020-04-15 12:00:00
+author: "Natalie Yu"
+image: "../../images/choco-donuts.jpeg"
 tags:
   - code
   - web Design

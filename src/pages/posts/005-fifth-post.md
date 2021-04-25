@@ -1,9 +1,9 @@
 ---
-title: "Fourth Post - React"
-slug: "fourth-post-react"
-date: 2020-04-12 12:00:00
-author: "Kristine Allen"
-image: "../../images/cupcakes.jpeg"
+title: "Fifth Post - Gatsby"
+slug: "fifth-post-gatsby"
+date: 2020-04-13 12:00:00
+author: "Kylie Chung"
+image: "../../images/icecream.jpeg"
 tags:
   - code
   - web Design
