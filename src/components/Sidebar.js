@@ -42,7 +42,7 @@ const Sidebar = ({ author, authorFluid }) => {
       <Card>
         <CardBody>
           <CardTitle className='text-center text-uppercase'>
-              Advertisemnet
+              Advertisement
           </CardTitle>
           <img src='https://via.placeholder.com/320x200' alt='Advert' style={{width: '100%'}} />
         </CardBody>
@@ -55,12 +55,12 @@ const Sidebar = ({ author, authorFluid }) => {
           <div>
             {blogs.map(blog => (
               <Card key={blog.id} >
-                <Link to={blog.frontmatter.slug}>
+                <Link to={`/${blog.frontmatter.slug}`}>
                   <Img className='card-image-top' fluid={blog.frontmatter.image.childImageSharp.fluid} />
                 </Link>
                 <CardBody>
                   <CardTitle>
-                    <Link to={blog.frontmatter.slug} >
+                    <Link to={`/${blog.frontmatter.slug}`} >
                       {blog.frontmatter.title}
                     </Link>
                   </CardTitle>
