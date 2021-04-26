@@ -11,9 +11,7 @@ const tagPosts = ({ data, pageContext }) => {
   return (
     <Layout pageTitle={pageHeader}>
       {data.allMarkdownRemark.nodes.map(node => (
-        <Post key={node.id} post={node} >
-
-        </Post>
+        <Post key={node.id} post={node} />
       ))}
     </Layout>
   )

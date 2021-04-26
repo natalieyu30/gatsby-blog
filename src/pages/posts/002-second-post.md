@@ -1,7 +1,7 @@
 ---
 title: "Second Post - HTML"
 slug: "second-post-html"
-date: 2020-01-11 10:00:00
+date: 2020-01-11
 author: "Natalie Yu"
 image: "../../images/candies.jpeg"
 tags:

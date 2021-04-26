@@ -1,7 +1,7 @@
 ---
 title: "Third Post - CSS"
 slug: "third-post-css"
-date: 2020-01-12 12:00:00
+date: 2020-01-12
 author: "Jay Chung"
 image: "../../images/cake.jpeg"
 tags:

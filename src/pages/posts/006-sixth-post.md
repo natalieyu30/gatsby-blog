@@ -1,7 +1,7 @@
 ---
 title: "Sixth Post - MERN stack"
 slug: "sixth-post-mern-stack"
-date: 2020-04-15 12:00:00
+date: 2020-04-15
 author: "Natalie Yu"
 image: "../../images/choco-donuts.jpeg"
 tags:

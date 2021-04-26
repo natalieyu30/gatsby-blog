@@ -1,7 +1,7 @@
 ---
 title: "Fourth Post - React"
 slug: "fourth-post-react"
-date: 2020-04-12 12:00:00
+date: 2020-04-12
 author: "Kristine Allen"
 image: "../../images/cupcakes.jpeg"
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "First Post - Introduction"
 slug: "first-post-introduction"
-date: 2020-12-01 7:00:00
+date: 2020-12-01
 author: "Kylie Chung"
 image: "../../images/macarrons.jpeg"
 tags:

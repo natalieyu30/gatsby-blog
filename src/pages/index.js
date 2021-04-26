@@ -19,7 +19,7 @@ const IndexPage = () => {
           frontmatter {
             title
             author
-            date(formatString: "Do MMMM hh:mm")
+            date(formatString: "Do MMMM YYYY")
             slug
             tags
             image {
